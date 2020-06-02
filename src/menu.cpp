@@ -40,29 +40,35 @@ int main_menu()
         cout << "\t\t 0 <=> Выход из программы" << endl;
         code = _getch();
         switch (code) {
-        case 49:
+        case 49: {
+            human();
+        } break;
 
-            break;
-        case 50:
+        case 50: {
+            society();
+        } break;
 
-            break;
-        case 51:
+        case 51: {
+            nature();
+        } break;
 
-            break;
-        case 52:
+        case 52: {
+            food_and_dreanks();
+        } break;
 
-            break;
-        case 53:
+        case 53: {
+            sport();
+        } break;
 
-            break;
-        case 54:
+        case 54: {
+            home();
+        } break;
 
-            break;
         case 48:
             return 0;
+
         default:
             cout << "\n error" << endl;
         }
-    }
 }
 
