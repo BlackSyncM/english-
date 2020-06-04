@@ -1,0 +1,26 @@
+balcony
+bath
+bathroom
+bedroom
+box room
+corridor
+dining-room
+district
+flat
+floor
+games room
+garage
+hall
+kitchen
+library
+living-room
+lock
+loggia
+place
+porter
+room
+room number
+space
+study
+toilet
+
