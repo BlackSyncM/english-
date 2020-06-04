@@ -1,19 +1,18 @@
 #include <iostream>
 #include <stdio.h>
-#include <string.h>
+#include <cstring>
 #include <stdlib.h>
-#include <conio.h>
-#include <windows.h>
+#include <fstream>
+#include <ctime>
 #include "menu.h"
+#include "test.h"
 
 using namespace std;
 
-int main()
-{
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
-    hello();
-    system("cls");
-    main_menu();
-    return 0;
+int main() {
+  setlocale(LC_ALL, "RUS");
+  hello();
+  system("clear");
+  main_menu();
+  return 0;
 }
