@@ -5,6 +5,7 @@
 #include <fstream>
 #include <ctime>
 #include "menu.h"
+#include "test.h"
 
 using namespace std;
 
