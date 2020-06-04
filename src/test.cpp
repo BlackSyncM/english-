@@ -28,6 +28,7 @@ void shuffle(string *str, int N) {
 
 int Test(string &Path, string &PathTranslate) {
   int f = 1;
+  int r = 0, w = 0;
   do {
     srand(time(NULL));
     ifstream fin;
@@ -134,8 +135,10 @@ int Test(string &Path, string &PathTranslate) {
     case 1: {
       if (wrong[0] == right) {
         cout << "\t\n\n Верный ответ! \n\n\n" << endl;
+        r++;
       } else {
         cout << "\t\n\n Ответ неверен \n\n\n" << endl;
+        w++;
       }
 
     } break;
@@ -143,8 +146,10 @@ int Test(string &Path, string &PathTranslate) {
     case 2: {
       if (wrong[1] == right) {
         cout << "\t\n\n Верный ответ! \n\n\n" << endl;
+        r++;
       } else {
         cout << "\t\n\n Ответ неверен \n\n\n" << endl;
+        w++;
       }
 
     } break;
@@ -152,16 +157,20 @@ int Test(string &Path, string &PathTranslate) {
     case 3: {
       if (wrong[2] == right) {
         cout << "\t\n\n Верный ответ! \n\n\n" << endl;
+        r++;
       } else {
         cout << "\t\n\n Ответ неверен \n\n\n" << endl;
+        w++;
       }
     } break;
 
     case 4: {
       if (wrong[3] == right) {
         cout << "\t\n\n Верный ответ! \n\n\n" << endl;
+        r++;
       } else {
         cout << "\t\n\n Ответ неверен \n\n\n" << endl;
+        w++;
       }
 
     } break;
@@ -176,7 +185,42 @@ int Test(string &Path, string &PathTranslate) {
     delete[] BS;
 
   } while (f == 1);
-
+  system("clear");
+  stat(r, w);
   return 0;
 }
 
+int stat(int r1, int w1) {
+
+  int sum = r1 + w1;
+
+  if (sum == 0)
+    return 0;
+
+  r1 = (r1 * 100) / sum;
+
+  w1 = (w1 * 100) / sum;
+
+  cout << "\n\n\n\n" << endl;
+  cout << "\t\t Всего ответов: " << sum << "\n\n" << endl;
+  cout << "\t\t Процент правильных ответов => " << r1 << "%\n" << endl;
+  cout << "\t\t Процент неправильных ответов => " << w1 << "%\n" << endl;
+
+  if (r1 == 100)
+    cout << "\t\t Вы отлично справились с данной темой!" << endl;
+  if ((r1 < 100) && (r1 >= 80))
+    cout << "\t\t Вы знаете тему хорошо, но нужно подучить некоторые слова "
+         << endl;
+  if ((r1 < 80) && (r1 >= 50))
+    cout << "\t\t Ваши результаты указывают на то, что нужно подучить данную "
+            "тему"
+         << endl;
+  if ((r1 < 50))
+    cout << "\t\t Пройдите тест заново" << endl;
+  cout << "\n\n\t\t Введите что-нибудь чтобы выйти из теста" << endl;
+
+  int code;
+  cin >> code;
+
+  return 0;
+}
