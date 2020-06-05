@@ -1,5 +1,5 @@
-#include "menu.h"
 #include "test.h"
+#include "menu.h"
 #include <cstring>
 #include <ctime>
 #include <fstream>
