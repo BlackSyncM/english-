@@ -9,7 +9,8 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
     setlocale(LC_ALL, "RUS");
     hello();
     system("clear");

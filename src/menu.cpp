@@ -13,14 +13,16 @@ struct flight {
     char name[20];
 } FL;
 
-int hello() {
+int hello()
+{
     cout << "\n\n Введите свой никнейм: " << endl;
     cout << "\n";
     cin >> FL.name;
     return 0;
 }
 
-int main_menu() {
+int main_menu()
+{
     int code;
     while (1) {
         system("clear");

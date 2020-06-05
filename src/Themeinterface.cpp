@@ -9,7 +9,8 @@
 
 using namespace std;
 
-int human() {
+int human()
+{
     int code;
 
     while (1) {
@@ -73,7 +74,8 @@ int human() {
     }
 }
 
-int society() {
+int society()
+{
     int code;
 
     while (1) {
@@ -127,7 +129,8 @@ int society() {
     }
 }
 
-int nature() {
+int nature()
+{
     int code;
 
     while (1) {
@@ -180,7 +183,8 @@ int nature() {
     }
 }
 
-int food_and_dreanks() {
+int food_and_dreanks()
+{
     int code;
 
     while (1) {
@@ -243,7 +247,8 @@ int food_and_dreanks() {
     }
 }
 
-int sport() {
+int sport()
+{
     int code;
 
     while (1) {
@@ -286,7 +291,8 @@ int sport() {
     }
 }
 
-int home() {
+int home()
+{
     int code;
 
     while (1) {

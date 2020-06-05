@@ -9,11 +9,13 @@
 
 using namespace std;
 
-int get_rand(int min, int max) {
+int get_rand(int min, int max)
+{
     return rand() % (max - min + 1) + min;
 }
 
-void shuffle(string* str, int N) {
+void shuffle(string* str, int N)
+{
     srand(time(NULL));
 
     for (int x = N - 1; x >= 1; x--) {
@@ -27,7 +29,8 @@ void shuffle(string* str, int N) {
     }
 }
 
-int Test(string& Path, string& PathTranslate) {
+int Test(string& Path, string& PathTranslate)
+{
     int f = 1;
     int r = 0, w = 0;
     do {
@@ -188,7 +191,8 @@ int Test(string& Path, string& PathTranslate) {
     return 0;
 }
 
-int stat(int r1, int w1) {
+int stat(int r1, int w1)
+{
     int sum = r1 + w1;
 
     if (sum == 0)
