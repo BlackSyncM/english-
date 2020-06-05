@@ -27,11 +27,11 @@ all: ./bin/english.exe
 
 test: ./bin/english-test.exe
 
-./bin/english-test.exe: ./build/test/test.o  ./build/read.o
-	$(g) $(CFLAGS) -o ./bin/english-test.exe ./build/test/test.o ./build/read.o
+./bin/english-test.exe: ./build/test/test.o  ./build/read.o  ./src/test.h  ./src/menu.h
+	$(g) $(CFLAGS) -o ./bin/english-test.exe ./build/test/test.o ./build/read.o -lm -lpthread 
 
-./build/test/test.o: ./test/test.cpp 
-	$(g) $(CFLAGS) -o ./build/test/test.o -c ./test/test.cpp -lm
+./build/test/test.o: ./test/test.cpp ./src/test.h ./src/menu.h
+	$(g) $(CFLAGS) -o ./build/test/test.o -c ./test/test.cpp -lm -lpthread
 
 runtest:
 	./bin/english-test.exe	
