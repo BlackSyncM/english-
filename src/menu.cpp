@@ -25,7 +25,7 @@ int main_menu() {
   while (1) {
     system("clear");
     cout << "\n\n\t Приветствую, " << FL.name << "\n\n" << endl;
-    cout << "\n\n\" << endl;
+    cout << "\n\n" << endl;
         cout
          << "\t\t Главное меню \n\n" << endl;
     cout << "\t\t Выберите тему: \n\n" << endl;

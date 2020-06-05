@@ -1,5 +1,5 @@
-#ifndef READ_H
-#define READ_H
+#ifndef MENU_H
+#define MENU_H
 int hello();
 int main_menu();
 int human();
