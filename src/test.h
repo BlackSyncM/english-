@@ -1,5 +1,5 @@
-#ifndef READ_H
-#define READ_H
+#ifndef TEST_H
+#define TEST_H
 #include <cstring>
 #include <fstream>
 
