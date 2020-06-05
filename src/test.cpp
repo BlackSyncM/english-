@@ -33,8 +33,8 @@ int Test(string &Path, string &PathTranslate) {
     srand(time(NULL));
     ifstream fin;
     ifstream translate;
-    fin.open(Path);
-    translate.open(PathTranslate);
+    fin.open(Path.c_str());
+    translate.open(PathTranslate.c_str());
     if ((!fin.is_open()) && (!translate.is_open())) {
       cout << "Произошла ошибка при открытии файла!\n";
     }
@@ -49,7 +49,7 @@ int Test(string &Path, string &PathTranslate) {
     string str;
 
     count = 0;
-    AS = nullptr;
+    AS = NULL;
 
     do {
       getline(fin, s);
@@ -65,7 +65,7 @@ int Test(string &Path, string &PathTranslate) {
 
         AS2[count - 1] = s;
 
-        if (AS != nullptr)
+        if (AS != NULL)
           delete[] AS;
 
         AS = AS2;
@@ -73,7 +73,7 @@ int Test(string &Path, string &PathTranslate) {
     } while (s != "");
 
     count = 0;
-    BS = nullptr;
+    BS = NULL;
 
     do {
 
@@ -90,12 +90,15 @@ int Test(string &Path, string &PathTranslate) {
 
         BS2[count - 1] = str;
 
-        if (BS != nullptr)
+        if (BS != NULL)
           delete[] BS;
 
         BS = BS2;
       }
     } while (str != "");
+    
+    fin.close();
+    translate.close();
 
     string h, right;
     string wrong[4];
