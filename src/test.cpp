@@ -1,26 +1,22 @@
+#include "menu.h"
+#include "test.h"
+#include <cstring>
+#include <ctime>
+#include <fstream>
 #include <iostream>
 #include <stdio.h>
-#include <cstring>
 #include <stdlib.h>
-#include <fstream>
-#include <ctime>
-#include "test.h"
-#include "menu.h"
 
 using namespace std;
 
-int get_rand(int min, int max)
-{
+int get_rand(int min, int max) {
     return rand() % (max - min + 1) + min;
 }
 
-void shuffle(string* str, int N)
-{
-
+void shuffle(string* str, int N) {
     srand(time(NULL));
 
-    for (int x = N - 1; x >= 1; x--)
-    {
+    for (int x = N - 1; x >= 1; x--) {
         int v = rand() % (x + 1);
 
         string tmp;
@@ -31,19 +27,16 @@ void shuffle(string* str, int N)
     }
 }
 
-int Test(string& Path, string& PathTranslate)
-{
+int Test(string& Path, string& PathTranslate) {
     int f = 1;
     int r = 0, w = 0;
-    do
-    {
+    do {
         srand(time(NULL));
         ifstream fin;
         ifstream translate;
         fin.open(Path.c_str());
         translate.open(PathTranslate.c_str());
-        if ((!fin.is_open()) && (!translate.is_open()))
-        {
+        if ((!fin.is_open()) && (!translate.is_open())) {
             cout << "Произошла ошибка при открытии файла!\n";
         }
 
@@ -59,13 +52,10 @@ int Test(string& Path, string& PathTranslate)
         count = 0;
         AS = NULL;
 
-        do
-        {
+        do {
             getline(fin, s);
 
-            if (s != "")
-            {
-
+            if (s != "") {
                 count++;
 
                 AS2 = new string[count];
@@ -85,14 +75,10 @@ int Test(string& Path, string& PathTranslate)
         count = 0;
         BS = NULL;
 
-        do
-        {
-
+        do {
             getline(translate, str);
 
-            if (str != "")
-            {
-
+            if (str != "") {
                 count++;
 
                 BS2 = new string[count];
@@ -122,11 +108,9 @@ int Test(string& Path, string& PathTranslate)
         right = BS[j];
         AS[j].clear();
         BS[j].clear();
-        while (kr != 3)
-        {
+        while (kr != 3) {
             j = get_rand(0, count - 1);
-            if (BS[j].empty() == false)
-            {
+            if (BS[j].empty() == false) {
                 wrong[j1] = BS[j];
                 AS[j].clear();
                 BS[j].clear();
@@ -148,72 +132,51 @@ int Test(string& Path, string& PathTranslate)
         cout << "\t\t 0 <=> Выход из теста" << endl;
 
         cin >> code;
-        switch (code)
-        {
-            case 1:
-            {
-                if (wrong[0] == right)
-                {
-                    cout << "\t\n\n Верный ответ! \n\n\n" << endl;
-                    r++;
-                }
-                else
-                {
-                    cout << "\t\n\n Ответ неверен \n\n\n" << endl;
-                    w++;
-                }
+        switch (code) {
+        case 1: {
+            if (wrong[0] == right) {
+                cout << "\t\n\n Верный ответ! \n\n\n" << endl;
+                r++;
+            } else {
+                cout << "\t\n\n Ответ неверен \n\n\n" << endl;
+                w++;
             }
-            break;
+        } break;
 
-            case 2:
-            {
-                if (wrong[1] == right)
-                {
-                    cout << "\t\n\n Верный ответ! \n\n\n" << endl;
-                    r++;
-                }
-                else
-                {
-                    cout << "\t\n\n Ответ неверен \n\n\n" << endl;
-                    w++;
-                }
+        case 2: {
+            if (wrong[1] == right) {
+                cout << "\t\n\n Верный ответ! \n\n\n" << endl;
+                r++;
+            } else {
+                cout << "\t\n\n Ответ неверен \n\n\n" << endl;
+                w++;
             }
-            break;
+        } break;
 
-            case 3:
-            {
-                if (wrong[2] == right)
-                {
-                    cout << "\t\n\n Верный ответ! \n\n\n" << endl;
-                    r++;
-                }
-                else
-                {
-                    cout << "\t\n\n Ответ неверен \n\n\n" << endl;
-                    w++;
-                }
+        case 3: {
+            if (wrong[2] == right) {
+                cout << "\t\n\n Верный ответ! \n\n\n" << endl;
+                r++;
+            } else {
+                cout << "\t\n\n Ответ неверен \n\n\n" << endl;
+                w++;
             }
-            break;
+        } break;
 
-            case 4:
-            {
-                if (wrong[3] == right)
-                {
-                    cout << "\t\n\n Верный ответ! \n\n\n" << endl;
-                    r++;
-                }
-                else
-                {
-                    cout << "\t\n\n Ответ неверен \n\n\n" << endl;
-                    w++;
-                }
+        case 4: {
+            if (wrong[3] == right) {
+                cout << "\t\n\n Верный ответ! \n\n\n" << endl;
+                r++;
+            } else {
+                cout << "\t\n\n Ответ неверен \n\n\n" << endl;
+                w++;
             }
-            break;
-            case 0:
-                f = 0;
+        } break;
+        case 0:
+            f = 0;
 
-            default:
-                cout << "\t\n\n error \n\n\n" << endl;
+        default:
+            cout << "\t\n\n error \n\n\n" << endl;
         }
 
         delete[] AS;
@@ -225,9 +188,7 @@ int Test(string& Path, string& PathTranslate)
     return 0;
 }
 
-int stat(int r1, int w1)
-{
-
+int stat(int r1, int w1) {
     int sum = r1 + w1;
 
     if (sum == 0)
@@ -245,9 +206,12 @@ int stat(int r1, int w1)
     if (r1 == 100)
         cout << "\t\t Вы отлично справились с данной темой!" << endl;
     if ((r1 < 100) && (r1 >= 80))
-        cout << "\t\t Вы знаете тему хорошо, но нужно подучить некоторые слова" << endl;
+        cout << "\t\t Вы знаете тему хорошо, но нужно подучить некоторые слова"
+             << endl;
     if ((r1 < 80) && (r1 >= 50))
-        cout << "\t\t Ваши результаты указывают на то, что нужно подучить данную тему" << endl;
+        cout << "\t\t Ваши результаты указывают на то, что нужно подучить "
+                "данную тему"
+             << endl;
     if ((r1 < 50))
         cout << "\t\t Пройдите тест заново" << endl;
     cout << "\n\n\t\t Введите что-нибудь чтобы выйти из теста" << endl;
