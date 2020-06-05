@@ -137,7 +137,7 @@ int Test(string& Path, string& PathTranslate)
         cin >> code;
         switch (code) {
         case 1: {
-            if (wrong[0] == right) {
+            if (check(wrong[0], right) == 1) {
                 cout << "\t\n\n Верный ответ! \n\n\n" << endl;
                 r++;
             } else {
@@ -147,7 +147,7 @@ int Test(string& Path, string& PathTranslate)
         } break;
 
         case 2: {
-            if (wrong[1] == right) {
+            if (check(wrong[1], right) == 1) {
                 cout << "\t\n\n Верный ответ! \n\n\n" << endl;
                 r++;
             } else {
@@ -157,7 +157,7 @@ int Test(string& Path, string& PathTranslate)
         } break;
 
         case 3: {
-            if (wrong[2] == right) {
+            if (check(wrong[2], right) == 1) {
                 cout << "\t\n\n Верный ответ! \n\n\n" << endl;
                 r++;
             } else {
@@ -167,7 +167,7 @@ int Test(string& Path, string& PathTranslate)
         } break;
 
         case 4: {
-            if (wrong[3] == right) {
+            if (check(wrong[3], right) == 1) {
                 cout << "\t\n\n Верный ответ! \n\n\n" << endl;
                 r++;
             } else {
