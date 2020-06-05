@@ -1,8 +1,8 @@
 #define CATCH_CONFIG_MAIN
 
-#include "../lib/catch.hpp"
 #include "../src/menu.h"
 #include "../src/test.h"
+#include "../lib/catch.hpp"
 
 TEST_CASE("TestCheck1", "CheckOk1")
 {
