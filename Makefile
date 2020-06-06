@@ -1,5 +1,5 @@
 g = g++
-CFLAGS = -Wall -Werror -MP -MMD -I -std=gnu++11
+CFLAGS = -Wall -Werror -MP -MMD -I -std=c++11
 
 .PHONY: clean run all
 
@@ -28,10 +28,10 @@ all: ./bin/english.exe
 test: ./bin/english-test.exe
 
 ./bin/english-test.exe: ./build/test/test.o  ./build/read.o  ./src/test.h  ./src/menu.h
-	$(g) $(CFLAGS) -o ./bin/english-test.exe ./build/test/test.o ./build/read.o -lm -lpthread 
+	$(g) $(CFLAGS) -o ./bin/english-test.exe ./build/test/test.o ./build/read.o -lm  
 
 ./build/test/test.o: ./test/test.cpp ./src/test.h ./src/menu.h
-	$(g) $(CFLAGS) -o ./build/test/test.o -c ./test/test.cpp -lm -lpthread
+	$(g) $(CFLAGS) -o ./build/test/test.o -c ./test/test.cpp -lm 
 
 runtest:
 	./bin/english-test.exe	
